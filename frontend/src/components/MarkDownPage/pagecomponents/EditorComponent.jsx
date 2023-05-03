@@ -4,7 +4,7 @@ import '../../../css/MarkdownPage.css'
 
 
 export default function EditorComponent() {
- const { text,setText }= useContext(AppContext);
+ const { text, setText } = useContext(AppContext);
   return (
     <div className='container'>
     <form className='note-write-form'>

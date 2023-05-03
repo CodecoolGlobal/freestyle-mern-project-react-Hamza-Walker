@@ -1,6 +1,7 @@
 import '../../css/MarkdownPage.css';
 import EditorComponent from './pagecomponents/EditorComponent'
-import NotesDisplayComponent from './pagecomponents/EditorComponent'
+import NotesDisplayComponent from  './pagecomponents/NotesDisplayComponent';
+
 
 export default function MarkdownPage(): JSX.Element {
 

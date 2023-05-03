@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import AppContext from '../AppContext';
 import {marked} from 'marked';
 import '../../../css/MarkdownPage.css'
