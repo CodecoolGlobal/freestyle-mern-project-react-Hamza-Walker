@@ -1,0 +1,47 @@
+.container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .note-write-form {
+    height: 500px;
+    width: 100%;
+
+  }
+ .textarea-write {
+    position: relative;
+    height: 800px;
+    width: 100%;
+    padding: 2px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 24px;
+    resize: none;
+    
+  } 
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .submit-post-button, .submit-edit-button, .submit-delete-button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 24px;
+    font-family: sans-serif;
+  }
+  
+  display-markdown {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
