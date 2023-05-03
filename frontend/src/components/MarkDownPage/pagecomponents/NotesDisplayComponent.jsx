@@ -1,9 +1,12 @@
 import React from 'react'
+import AppContext from '../AppContext';
 import {marked} from 'marked';
+import '../../../css/MarkdownPage.css'
 
 export default function NotesDisplayComponent() {
+  const { text }= useContext(AppContext);
   return (
-    <div>NotesDisplayComponent</div>
-  )
-}
+      <div className='dangerous-dev' dangerouslySetInnerHTML={{ __html: marked(text) }}></div>
+      )
 
+}
