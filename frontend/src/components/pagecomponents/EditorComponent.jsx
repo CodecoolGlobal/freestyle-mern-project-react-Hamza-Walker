@@ -1,6 +1,6 @@
 import React,{ useContext,useState } from 'react'
 import AppContext from '../AppContext';
-import '../../../css/MarkdownPage.css'
+import '../../css/MarkdownPage.css'
 
 
 export default function EditorComponent() {

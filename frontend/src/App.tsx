@@ -1,5 +1,5 @@
-import MarkdownPage from './components/MarkDownPage/MarkdownPage';
-import { AppProvider } from './components/MarkDownPage/AppContext';
+import MarkdownPage from './components/MarkdownPage';
+import { AppProvider } from './components/AppContext';
 
 export default function App() {
   return (

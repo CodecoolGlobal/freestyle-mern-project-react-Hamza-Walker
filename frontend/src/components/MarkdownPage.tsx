@@ -1,4 +1,4 @@
-import '../../css/MarkdownPage.css';
+import '../css/MarkdownPage.css';
 import EditorComponent from './pagecomponents/EditorComponent'
 import NotesDisplayComponent from  './pagecomponents/NotesDisplayComponent';
 

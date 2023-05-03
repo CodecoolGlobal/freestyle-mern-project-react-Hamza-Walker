@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import AppContext from '../AppContext';
 import {marked} from 'marked';
-import '../../../css/MarkdownPage.css'
+import '../../css/MarkdownPage.css'
 
 export default function NotesDisplayComponent() {
   const { text }= useContext(AppContext);
