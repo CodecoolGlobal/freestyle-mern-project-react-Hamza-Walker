@@ -1,6 +1,7 @@
 .flex-row{
     display: flex;
     flex-direction: row;
+    background-color: #f8f8f8;
 
 }
 .gap-1{
@@ -41,14 +42,20 @@
     font-size: 24px;
     font-family: sans-serif;
   }
+  .submit-post-button:hover, .submit-edit-button:hover, .submit-delete-button:hover {
+    background-color: white;
+    color: navy;
+  }
   
-  /* .display-markdown{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
+  .submit-post-button:active, .submit-edit-button:active, .submit-delete-button:active {
+    color: lightgreen;
+  }
+  
+  .page-header{
     align-items: center;
-
-  } */
+    font-size: 50px;
+  }
+  
   .dangerous-dev{
     flex-direction: column;
     align-items: center;
