@@ -7,6 +7,8 @@ export default function MarkdownPage(): JSX.Element {
 
   //TODO: Import the users information after the login from the context API
   //TODO: use axios to POST, DELETE, PATCH
+  //TODO: pass the updated user information in the body 
+
  const handlePost = (event) => {
 console.log(event)
  }
