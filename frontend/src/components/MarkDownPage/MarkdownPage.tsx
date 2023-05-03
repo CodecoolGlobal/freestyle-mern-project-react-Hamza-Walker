@@ -7,7 +7,7 @@ export default function MarkdownPage(): JSX.Element {
   const [text, setText] = useState('# A demo of `react-markdown`\n\n`react-markdown` is a markdown component for React.\n\n👉 Changes are re-rendered as you type.\n\n👈 Try writing some markdown on the left.\n\n## Overview\n\nA component by [Espen Hovlandsdal](https://espen.codes/)');
 
   return (
-    <>
+    <div className='flex-row'>
     <div className='container'>
       <h1 className='page-header'>MarkdownPage</h1>
       <form className='note-write-form'>
@@ -28,7 +28,7 @@ export default function MarkdownPage(): JSX.Element {
         <h2>Preview</h2>
         <div dangerouslySetInnerHTML={{ __html: marked(text) }}></div>
       </div>
-      </>
+      </div>
     
   );
 }
