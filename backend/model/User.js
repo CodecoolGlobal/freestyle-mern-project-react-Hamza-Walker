@@ -5,7 +5,7 @@ const userSchema = new Schema ({
     UUID: Schema.Types.UUID,
     name: String,
     password: String,
-    icon: Image,
+    iconURL: String
 })
 
 const User = model ('User', userSchema);
