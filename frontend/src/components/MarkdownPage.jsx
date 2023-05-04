@@ -12,6 +12,9 @@ export default function MarkdownPage() {
 	//TODO: Import the users information after the login from the context API
 	//TODO: use axios to POST, DELETE, PATCH
 	//TODO: pass the updated user information in the body
+
+	console.log(notes)
+
 	const formData = {
 		name: text,
 		password: "String",
