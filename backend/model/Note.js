@@ -5,7 +5,7 @@ const { Schema, model } = mongoose;
 const noteScheme = new Schema ({
     title: String,
     content: String,
-    owner: { type: User },
+    owner: String,
     permitted: String,
     createdAt: Date,
     updatedAt: Date
