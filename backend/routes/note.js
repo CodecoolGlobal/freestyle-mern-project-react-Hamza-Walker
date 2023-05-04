@@ -2,35 +2,32 @@ const express = require('express');
 const router = express.Router();
 const Note = require('../model/Note');
 
-//Get all Notes
+// Get every note by owner, if id is passed only specific note
 
 router.get('/', (req, res) => {
-    Note.find({})
-    .then(note => {
-        res.json(note);
-    })
-    .catch((err) => {
-        console.log(err);
-        res.status(500).json({ success: false });
-    });
-});
-
-//Get notes by id
-
-router.get('/:id', (req, res) => {
-    const id = req.params.id;
-    Note.findById(id)
-    .then((note) => {
-        if (!note) {
-            return res.status(404).json({ message: 'Note not found' });
-        }
-        res.json(note);
-    })
-    .catch((err) => {
-        console.log(err);
-        res.status(500);
-    });
-});
+    console.log(req.body)
+    const email = req.body.owner
+    const id = req.body.id
+    if (id) {
+        Note.findById(id)
+        .then(note => {
+            res.json(note)
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(400).json({ message: 'Note not found'})
+        })
+    } else {
+        Note.find({ owner: email})
+        .then(note => {
+            res.json(note)
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(400).json({ message: 'Note not found'})
+        })
+    }
+})
 
 // Create note
 
