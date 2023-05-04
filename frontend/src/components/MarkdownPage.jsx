@@ -3,13 +3,14 @@ import EditorComponent from "./markDownPagecomponents/EditorComponent"
 import NotesDisplayComponent from "./markDownPagecomponents/NotesDisplayComponent"
 import axios from "axios"
 import { AppContext } from "../App"
+import FetchUserNotes from './FetchUserNotes'
 import Avatar from "./Avatar"
 
 import "../assets/css/MarkdownPage.css"
 
 export default function MarkdownPage() {
 	const { text, user, notes, setNotes } = useContext(AppContext)
-	//TODO: Import the users information after the login from the context API
+	//TODO:POST some notes to the DB
 	//TODO: use axios to POST, DELETE, PATCH
 	//TODO: pass the updated user information in the body
 
@@ -55,6 +56,7 @@ export default function MarkdownPage() {
 			<div className="flex-row">
 				<NotesDisplayComponent />
 				<EditorComponent />
+				<FetchUserNotes/>
 			</div>
 		</>
 	)

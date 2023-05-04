@@ -22,7 +22,7 @@ export default function LoginPage() {
 					const userData = jwt_decode(response.credential)
 					const { name, picture, email } = userData
 					setUser({
-						id: email,
+						email: email,
 						name: name,
 						iconURL: picture
 					})

@@ -5,7 +5,7 @@ const noteScheme = new Schema ({
     title: String,
     content: String,
     owner: String,
-    permitted: String,
+    permitted: [String],
     createdAt: Date,
     updatedAt: Date
 })
