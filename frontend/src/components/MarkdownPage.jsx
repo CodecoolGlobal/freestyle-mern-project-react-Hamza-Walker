@@ -39,8 +39,8 @@ export default function MarkdownPage() {
 
 	return (
 		<>
+		{/* <Avatar /> */}
 			<div className="button-container">
-				<Avatar />
 				<button type="submit" className="submit-post-button" onClick={e => handlePost(e)}>
 					Post
 				</button>
