@@ -14,21 +14,24 @@ export default function App() {
     password: null,
     iconURL: null,
   });
+  const [notes, setNotes] = useState()
 	const [text, setText] = useState(
 		"# A demo of `react-markdown`\n\n`react-markdown` is a markdown component for React.\n\n👉 Changes are re-rendered as you type.\n\n👈 Try writing some markdown on the left.\n\n## Overview\n\nA component by [Espen Hovlandsdal](https://espen.codes/)"
 	)
 
 	let toRender = ""
 
-	if (!user) {
+	if (!user.name) {
 		toRender = (
 			<GoogleLogin
     onSuccess={response => {
-    const { name, picture } = response.profileObj;
+      const userData = jwt_decode(response.credential)
+    const { name, picture, email} = userData
     setUser({
+      id:email,
       name: name,
-      password: null,
       iconURL: picture,
+      
     });
   }}
   text="continue_with"
@@ -40,7 +43,7 @@ export default function App() {
 	}
 
 	return (
-		<AppContext.Provider value={{ user, text, setText }}>
+		<AppContext.Provider value={{ user, setUser, text, setText ,notes, setNotes}}>
 			<GoogleOAuthProvider clientId={clientId}>{toRender}</GoogleOAuthProvider>
 		</AppContext.Provider>
 	)
