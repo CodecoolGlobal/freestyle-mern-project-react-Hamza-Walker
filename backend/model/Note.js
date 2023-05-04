@@ -4,8 +4,8 @@ const { Schema, model } = mongoose;
 const noteScheme = new Schema ({
     title: String,
     content: String,
-    owner: Schema.Types.UUID,
-    permitted: Schema.Types.UUID,
+    owner: String, // TODO: UUID instead String
+    permitted: String, // TODO: Array of UUID
     createdAt: Date,
     updatedAt: Date
 })

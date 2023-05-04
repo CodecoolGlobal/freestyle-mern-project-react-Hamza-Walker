@@ -1,15 +1,11 @@
-import User from './User'
-
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
 const groupScheme = new Schema ({
-
-    members: {  // A collection of Users or UUIDs
-        type: User,
-        default: null
-    },
-    owner: Schema.Types.UUID
+    membersId: String, // array of IDs
+    ownerId: String,
+    createdAt: Date,
+    updatedAt: Date
 })
 
 const Group = model ('Group', groupScheme);
