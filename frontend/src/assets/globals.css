@@ -1,0 +1,12 @@
+:root {
+	--color-base: #333;
+	--color-bg: #ccc;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}

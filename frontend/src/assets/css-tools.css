@@ -1,0 +1,29 @@
+@import url(./globals.css);
+
+.flex-column,
+.flex-row {
+	display: flex;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.gap-05 {
+	gap: 0.5rem;
+}
+.gap-1 {
+	gap: 1rem;
+}
+.gap-15 {
+	gap: 1.5rem;
+}
+.gap-2 {
+	gap: 2rem;
+}
+.gap-25 {
+	gap: 2.5rem;
+}
+.gap-3 {
+	gap: 3rem;
+}

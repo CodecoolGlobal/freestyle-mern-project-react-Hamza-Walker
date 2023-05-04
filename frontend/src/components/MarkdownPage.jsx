@@ -6,7 +6,7 @@ import axios from "axios"
 import { AppContext } from "../App"
 
 export default function MarkdownPage() {
-	const { text,user, notes, setNotes } = useContext(AppContext)
+	const { text, user, notes, setNotes } = useContext(AppContext)
 	//TODO: Import the users information after the login from the context API
 	//TODO: use axios to POST, DELETE, PATCH
 	//TODO: pass the updated user information in the body
