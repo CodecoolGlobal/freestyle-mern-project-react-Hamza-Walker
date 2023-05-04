@@ -3,7 +3,7 @@ import EditorComponent from "./markDownPagecomponents/EditorComponent"
 import NotesDisplayComponent from "./markDownPagecomponents/NotesDisplayComponent"
 import axios from "axios"
 import { AppContext } from "../App"
-import Avatar from "./Avatar"
+import Header from "./Header"
 
 import "../assets/css/MarkdownPage.css"
 
@@ -39,8 +39,8 @@ export default function MarkdownPage() {
 
 	return (
 		<>
+			<Header />
 			<div className="button-container">
-				<Avatar />
 				<button type="submit" className="submit-post-button" onClick={e => handlePost(e)}>
 					Post
 				</button>
