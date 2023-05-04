@@ -2,10 +2,11 @@ const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
 const userSchema = new Schema ({
-    UUID: Schema.Types.UUID,
     name: String,
     password: String,
-    icon: Image,
+    iconURL: String,
+    createdAt: Date,
+    updatedAt: Date
 })
 
 const User = model ('User', userSchema);
