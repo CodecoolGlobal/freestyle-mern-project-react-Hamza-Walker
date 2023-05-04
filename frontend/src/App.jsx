@@ -2,6 +2,7 @@ import { createContext, useState } from "react"
 import MarkdownPage from "./components/MarkdownPage"
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google"
 import jwt_decode from "jwt-decode"
+import LoginPage from "./components/LoginPage"
 
 const clientId = "161332176689-u4kmfe25ddfu9na2ick4f9b5d2990cir.apps.googleusercontent.com"
 
