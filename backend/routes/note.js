@@ -4,6 +4,25 @@ const Note = require('../model/Note');
 
 //Get all Notes
 
+// Reqbody wird weitergepassed und find note based on email & id e.g. { email, id}
+
+router.get('/test/', (req, res) => {
+    console.log(req.body)
+    const email = req.body.owner
+    const id = req.body.id
+    if (id) {
+        Note.findById(id)
+        .then(note => {
+            res.json(note)
+        })
+    } else {
+        Note.find({ owner: email})
+        .then(note => {
+            res.json(note)
+        })
+    }
+})
+
 router.get('/', (req, res) => {
     Note.find({})
     .then(note => {
@@ -42,6 +61,7 @@ router.post('/', (req, res) => {
     const permitted = req.body.permitted;
     const createdAt = Date.now();
     const updatedAt = Date.now();
+    // const obj = { Note: Note}
 
     const note = new Note({
     title,

@@ -1,13 +1,10 @@
-const  User = require('./User')
 const mongoose = require('mongoose');
 const { Schema, model } = mongoose;
 
 const noteScheme = new Schema ({
     title: String,
     content: String,
-    owner: {
-        type: User.schema
-    },
+    owner: String,
     permitted: String,
     createdAt: Date,
     updatedAt: Date
