@@ -1,4 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
+import axios from 'axios';
 import { AppContext } from "../App"
 
 export default function FetchUserNotes() {
@@ -7,9 +8,14 @@ export default function FetchUserNotes() {
 
   useEffect(() => {
     async function fetchNotes() {
-      const response = await fetch(`/api/notes?owner=${user.email}`);
-      const data = await response.json();
-      setNotes(data);
+      try {
+        const response = await axios.get(`http://localhost:3000/api/note`, {
+          params: { owner: user.email }
+        });
+        setNotes(response.data);
+      } catch (error) {
+        console.error(error);
+      }
     }
     fetchNotes();
   }, [user]);
@@ -25,4 +31,3 @@ export default function FetchUserNotes() {
     </div>
   );
 }
-
