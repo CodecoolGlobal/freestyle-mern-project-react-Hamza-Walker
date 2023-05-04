@@ -1,9 +1,11 @@
 import { useContext } from "react"
-import "../css/MarkdownPage.css"
 import EditorComponent from "./markDownPagecomponents/EditorComponent"
 import NotesDisplayComponent from "./markDownPagecomponents/NotesDisplayComponent"
 import axios from "axios"
 import { AppContext } from "../App"
+import Avatar from "./Avatar"
+
+import "../assets/css/MarkdownPage.css"
 
 export default function MarkdownPage() {
 	const { text, user, notes, setNotes } = useContext(AppContext)
@@ -35,6 +37,7 @@ export default function MarkdownPage() {
 	return (
 		<>
 			<div className="button-container">
+				<Avatar />
 				<button type="submit" className="submit-post-button" onClick={e => handlePost(e)}>
 					Post
 				</button>

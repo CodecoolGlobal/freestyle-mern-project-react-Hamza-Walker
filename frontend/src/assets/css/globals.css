@@ -1,12 +1,14 @@
 :root {
 	--color-base: #333;
 	--color-bg: #ccc;
+
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 * {
 	box-sizing: border-box;
+	margin: 0;
 }
 
 body {
-	margin: 0;
 }
