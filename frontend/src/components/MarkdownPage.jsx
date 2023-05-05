@@ -41,7 +41,7 @@ export default function MarkdownPage() {
 	return (
 		<>
 		{/* <Avatar /> */}
-			<div className="button-container">
+			{/* <div className="button-container">
 				<button type="submit" className="submit-post-button" onClick={e => handlePost(e)}>
 					Post
 				</button>
@@ -51,7 +51,7 @@ export default function MarkdownPage() {
 				<button type="submit" className="submit-delete-button" onClick={e => handleDelete(e)}>
 					Delete
 				</button>
-			</div>
+			</div> */}
 			{/* <h1 className="page-header">MarkdownPage</h1> */}
 			<div className="flex-row">
 				<NotesDisplayComponent />

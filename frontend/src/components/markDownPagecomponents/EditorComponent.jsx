@@ -5,12 +5,19 @@ import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 // import { solarizeddark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 export default function EditorComponent() {
-	const { text, setText, user, setUser, notes, setNotes } = useContext(AppContext)
+	const { text, setText, user, setUser, selectedNote, notes, setNotes, setSelectedNote } = useContext(AppContext)
 
 	return (
 		<div className="container">
 			<form className="note-write-form">
-				<input className="user" />
+				<input className="user" on onInput={(e)=> {
+					setSelectedNote(prevState => ({
+						...prevState,
+						title: e.target.value
+					  }));
+					console.log(e.target.value)
+					console.log(selectedNote)
+				}}/>
 				<textarea
 					className="note-input"
 					value={text}

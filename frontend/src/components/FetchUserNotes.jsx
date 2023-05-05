@@ -6,8 +6,8 @@ import '../assets/css/fetch-user-notes.css'
 export default function FetchUserNotes() {
 
   const [notes, setNotes] = useState([]);
-  const [selectedNote, setSelectedNote] = useState(null);
-  const { user, setCurrentUser, setText } = useContext(AppContext);
+  // const [selectedNote, setSelectedNote] = useState(null);
+  const { user, setCurrentUser, setText, selectedNote, setSelectedNote } = useContext(AppContext);
 
   useEffect(() => {
     async function fetchNotes() {
@@ -23,8 +23,8 @@ export default function FetchUserNotes() {
     fetchNotes();
   }, [user]);
 
-  const handleEditNote = (noteId) => {
-    // implement edit note logic here
+  const handleSaveNote = (noteId) => {
+    // implement Save note logic here
   }
 
   const handleDeleteNote = (noteId) => {
@@ -48,8 +48,8 @@ export default function FetchUserNotes() {
           <div>
             <button onClick={(e) => {
               e.stopPropagation();
-              handleEditNote(note._id);
-            }}>Edit</button>
+              handleSaveNote(note._id);
+            }}>Save</button>
             <button onClick={(e) => {
               e.stopPropagation();
               handleDeleteNote(note._id);
