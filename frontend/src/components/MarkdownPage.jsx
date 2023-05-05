@@ -54,8 +54,8 @@ export default function MarkdownPage() {
 			</div>
 			<h1 className="page-header">MarkdownPage</h1>
 			<div className="flex-row">
-				{/* <NotesDisplayComponent />
-				<EditorComponent /> */}
+				<NotesDisplayComponent />
+				{/* <EditorComponent /> */}
 				<FetchUserNotes/>
 			</div>
 		</>

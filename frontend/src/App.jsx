@@ -11,13 +11,14 @@ export const AppContext = createContext({})
 export default function App() {
 	// const [user, setUser] = useState(null)
 	const [user, setUser] = useState(null)
+  const [currentUser, setCurrentUser] = useState()
 	const [notes, setNotes] = useState()
 	const [text, setText] = useState(
 		"# A demo of `react-markdown`\n\n`react-markdown` is a markdown component for React.\n\n👉 Changes are re-rendered as you type.\n\n👈 Try writing some markdown on the left.\n\n## Overview\n\nA component by [Espen Hovlandsdal](https://espen.codes/)"
 	)
 
 	return (
-		<AppContext.Provider value={{ user, setUser, text, setText, notes, setNotes }}>
+		<AppContext.Provider value={{ user, setUser, text, setText, notes, setNotes, currentUser, setCurrentUser}}>
 			<GoogleOAuthProvider clientId={clientId}>{user ? <MarkdownPage /> : <LoginPage />}</GoogleOAuthProvider>
 		</AppContext.Provider>
 	)

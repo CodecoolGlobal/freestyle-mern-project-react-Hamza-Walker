@@ -1,11 +1,13 @@
-import { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AppContext } from "../App"
 import '../assets/css/fetch-user-notes.css'
 
 export default function FetchUserNotes() {
+
   const [notes, setNotes] = useState([]);
-  const { user } = useContext(AppContext);
+  const [selectedNote, setSelectedNote] = useState(null);
+  const { user, setCurrentUser, setText } = useContext(AppContext);
 
   useEffect(() => {
     async function fetchNotes() {
@@ -29,13 +31,19 @@ export default function FetchUserNotes() {
     // implement delete note logic here
   }
 
+  const handleNoteClick = (note) => {
+    setSelectedNote(note);
+    setCurrentUser(user.email);
+    setText(note.content);
+  }
+
   return (
     <div>
       {notes.map((note) => (
-        <div key={note._id} className="fetch-user-note" onClick={() => handleEditNote(note._id)}>
+        <div key={note._id} className="fetch-user-note" onClick={() => handleNoteClick(note)}>
           <div>
             <h2>{note.title}</h2>
-            <p>{note.content}</p>
+            {/* <p>{note.content}</p> */}
           </div>
           <div>
             <button onClick={(e) => {
@@ -52,9 +60,3 @@ export default function FetchUserNotes() {
     </div>
   );
 }
-
-
-
-
-
-
