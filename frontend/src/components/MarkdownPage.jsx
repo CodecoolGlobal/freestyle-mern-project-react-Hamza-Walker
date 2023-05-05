@@ -52,10 +52,10 @@ export default function MarkdownPage() {
 					Delete
 				</button>
 			</div>
-			<h1 className="page-header">MarkdownPage</h1>
+			{/* <h1 className="page-header">MarkdownPage</h1> */}
 			<div className="flex-row">
 				<NotesDisplayComponent />
-				{/* <EditorComponent /> */}
+				<EditorComponent />
 				<FetchUserNotes/>
 			</div>
 		</>
