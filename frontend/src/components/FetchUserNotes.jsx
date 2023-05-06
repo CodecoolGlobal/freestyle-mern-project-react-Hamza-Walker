@@ -7,7 +7,7 @@ export default function FetchUserNotes() {
 
   const [notes, setNotes] = useState([]);
   // const [selectedNote, setSelectedNote] = useState(null);
-  const { user, setCurrentUser, setText, selectedNote, setSelectedNote } = useContext(AppContext);
+  const { user, setCurrentUser, setText, selectedNote, setSelectedNote, text } = useContext(AppContext);
 
   useEffect(() => {
     async function fetchNotes() {
@@ -23,9 +23,41 @@ export default function FetchUserNotes() {
     fetchNotes();
   }, [user]);
 
-  const handleSaveNote = (noteId) => {
-    // implement Save note logic here
-  }
+  const handleSaveNote = async (noteId) => {
+    try {
+      if (!selectedNote) {
+        return;
+      }
+  
+      // Create the updated note object with the new title and content
+      const updatedNote = {
+        ...selectedNote,
+        title: selectedNote.title,
+        content: text,
+      };
+  
+      // Send the PUT request to update the note
+      const response = await axios.put(
+        `http://localhost:3000/api/note/${noteId}`,
+        updatedNote
+      );
+  
+      // Update the notes state with the updated note object
+      setNotes((prevState) =>
+        prevState.map((note) => {
+          if (note._id === noteId) {
+            return response.data;
+          } else {
+            return note;
+          }
+        })
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
+  //TODO: add a button from creating a new note 
 
   const handleDeleteNote = (noteId) => {
     // implement delete note logic here
