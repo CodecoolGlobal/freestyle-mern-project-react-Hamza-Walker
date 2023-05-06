@@ -57,11 +57,16 @@ export default function FetchUserNotes() {
     }
   };
   
-  
+  //TODO: add a button from creating a new note 
 
-  const handleDeleteNote = (noteId) => {
-    // implement delete note logic here
-  }
+  const handleDeleteNote = async (noteId) => {
+    try {
+      await axios.delete(`http://localhost:3000/api/note/${noteId}`);
+      setNotes(notes.filter((note) => note._id !== noteId));
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const handleNoteClick = (note) => {
     setSelectedNote(note);
