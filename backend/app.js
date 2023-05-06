@@ -5,7 +5,7 @@ const notesRouter = require("./routes/note")
 const groupRouter = require("./routes/group")
 const userRouter = require("./routes/user")
 
-mongoose.connect("mongodb+srv://shengkaixia1337:5tdpVl4MfjTquSgE@cluster0.teev0da.mongodb.net/test")
+mongoose.connect("mongodb+srv://hamzawalker:mongodb@cluster0.nadxgpg.mongodb.net/test")
 
 const app = express()
 
