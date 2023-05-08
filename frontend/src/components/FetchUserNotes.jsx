@@ -75,7 +75,7 @@ export default function FetchUserNotes() {
   }
 
   return (
-    <div>
+    <div className='notes-title'>
       {notes.map((note) => (
         <div key={note._id} className="fetch-user-note" onClick={() => handleNoteClick(note)}>
           <div>
@@ -86,11 +86,11 @@ export default function FetchUserNotes() {
             <button onClick={(e) => {
               e.stopPropagation();
               handleSaveNote(note._id);
-            }}>Save</button>
+            }}>+</button>
             <button onClick={(e) => {
               e.stopPropagation();
               handleDeleteNote(note._id);
-            }}>Delete</button>
+            }}>-</button>
           </div>
         </div>
       ))}

@@ -1,39 +1,20 @@
-.fetch-user-note {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .fetch-user-note:hover {
-    background-color: #f2f2f2;
-  }
-  
-  .fetch-user-note h2 {
-    margin: 0;
-  }
-  
-  .fetch-user-note button {
-    display: flex;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  .fetch-user-note button:hover {
-    background-color: #3e8e41;
-  }
-  
-  .fetch-user-note button:last-child {
-    margin-left: 0;
-  }
-  
+.fetch-user-note button {
+  background-color: #020f02;
+  color: white;
+  border: none;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.fetch-user-note button:hover {
+  background-color: #f6dd01;
+}
+
+
