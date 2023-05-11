@@ -38,7 +38,6 @@ export default function LoginPage() {
         locale="en-En"
         useOneTap
       />
-	  <pre>{JSON.stringify(user, null, 2)}</pre>
     </div>
   );
 }

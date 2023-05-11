@@ -10,12 +10,7 @@ import "../assets/css/MarkdownPage.css"
 
 export default function MarkdownPage() {
 	const { text, user, notes, setNotes } = useContext(AppContext)
-	//TODO:POST some notes to the DB
-	//TODO: use axios to POST, DELETE, PATCH
-	//TODO: pass the updated user information in the body
-
 	console.log(notes)
-
 	const formData = {
 		name: text,
 		password: "String",
