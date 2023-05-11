@@ -1,8 +1,7 @@
 import { GoogleLogin } from "@react-oauth/google"
 import jwt_decode from "jwt-decode"
 import { useContext } from "react"
-import { AppContext } from "../App"
-
+import { AppContext } from '../main'
 import "../assets/css/login-page.css"
 
 export default function LoginPage() {

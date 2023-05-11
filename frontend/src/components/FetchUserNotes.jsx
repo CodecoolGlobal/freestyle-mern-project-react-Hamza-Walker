@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { AppContext } from "../App"
+import { AppContext } from '../main'
 import '../assets/css/fetch-user-notes.css'
 
 export default function FetchUserNotes() {

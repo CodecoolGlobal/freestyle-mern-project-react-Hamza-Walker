@@ -2,7 +2,7 @@ import { useContext } from "react"
 import EditorComponent from "./markDownPagecomponents/EditorComponent"
 import NotesDisplayComponent from "./markDownPagecomponents/NotesDisplayComponent"
 import axios from "axios"
-import { AppContext } from "../App"
+import { AppContext } from '../main'
 import FetchUserNotes from './FetchUserNotes'
 import Avatar from "./Avatar"
 

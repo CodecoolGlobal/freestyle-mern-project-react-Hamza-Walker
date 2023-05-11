@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { AppContext } from "../../App"
+import { AppContext } from "../../main"
 import { marked } from "marked"
 
 export default function NotesDisplayComponent() {
