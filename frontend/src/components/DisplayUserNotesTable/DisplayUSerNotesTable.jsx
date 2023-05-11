@@ -4,6 +4,8 @@ import axios from 'axios'
 import { Table } from 'reactstrap';
 import './DisplayUSerNotesTable.css'; 
 import { useNavigate } from "react-router-dom";
+import NavigationBar from '../NavigationBar/NavigationBar';
+
 
 
 //TODO: create a table with user notes, id, title, content, date created, date updated, owner email
@@ -34,9 +36,11 @@ const DisplayUSerNotesTable = () => {
     setCurrentUserNote(note)
     navigate("/notes/:id");
   }
+  
 
   return (
     <>
+     <NavigationBar />
       {loading ? (
         <div>Loading...</div>
       ) : (
