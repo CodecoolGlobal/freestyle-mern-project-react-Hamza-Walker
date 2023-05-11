@@ -2,18 +2,17 @@ import React,{useContext, useEffect, useState} from 'react'
 import { AppContext } from '../../main'
 import axios from 'axios'
 import { Table } from 'reactstrap';
-import './DisplayUSerNotesTable.css'; // import the CSS file for the table style
+import './DisplayUSerNotesTable.css'; 
+import { useNavigate } from "react-router-dom";
+
 
 //TODO: create a table with user notes, id, title, content, date created, date updated, owner email
 //TODO: create a button to create a new note
-//TODO: create a button to delete a note
-//TODO: create a button to edit a note
-//TODO: create a button to save a note
-
 
 const DisplayUSerNotesTable = () => {
-  const { user, notes, setNotes} = useContext(AppContext)
+  const { user, notes, setNotes, setCurrentUserNote,} = useContext(AppContext)
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserObject = async () => {
@@ -31,7 +30,9 @@ const DisplayUSerNotesTable = () => {
   }, [user.email]);
 
   const handleEvent = (event,note) => {
-    console.log(event.target,note)
+    console.log(note)
+    setCurrentUserNote(note)
+    navigate("/notes/:id");
   }
 
   return (
