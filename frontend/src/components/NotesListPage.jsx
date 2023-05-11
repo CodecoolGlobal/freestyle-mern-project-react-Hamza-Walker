@@ -21,7 +21,9 @@ useEffect(() => {
   };
   fetchUserObject();
 }, [user.email]);
-
+const handleEvent = (event) => {
+  console.log(event.target)
+}
 return (
   <>
     {loading ? (
@@ -29,9 +31,9 @@ return (
     ) : (
       <div className='notes-list-container'>
         <h1>NotesListPage</h1>
-        <ul>
+        <ul onClick={handleEvent}>
           {notes.map(note => (
-            <li key={note._id}>{note.content}</li>
+            <li key={note._id}>{note.title}</li>
           ))}
         </ul>
       </div>
