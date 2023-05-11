@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import LoginPage from "./components/LoginPage";
-import NotesListPage from "./components/NotesListPage";
+import DisplayUSerNotesTable from "./components/DisplayUserNotesTable/DisplayUserNotesTable";
 import EditorPage from "./components/EditorPage";
 
 export const AppContext = createContext({});
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/notes",
-    element: <NotesListPage />,
+    element: <DisplayUSerNotesTable />,
   },
   {
     path: "/notes/:id",

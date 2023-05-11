@@ -1,0 +1,15 @@
+.notes-table {
+    background-color: #f5f5f5; /* Set the background color of the table */
+    color: #333; /* Set the text color of the table */
+  }
+  
+  .notes-table thead th {
+    background-color: #333; /* Set the background color of the table header */
+    color: #fff; /* Set the text color of the table header */
+  }
+  
+  .notes-table tbody tr:hover {
+    background-color: #ddd; /* Set the background color of the table row when hovering */
+    cursor: pointer; /* Change the cursor to a pointer when hovering over the table row */
+  }
+  
