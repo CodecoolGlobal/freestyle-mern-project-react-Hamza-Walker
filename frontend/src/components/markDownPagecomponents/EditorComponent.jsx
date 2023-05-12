@@ -1,35 +1,46 @@
-import React, { useContext, useState } from "react"
-import { AppContext } from "../../main"
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism"
-// import { solarizeddark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import React, { useContext } from "react";
+import { AppContext } from "../../main";
+import { Form, FormGroup, Label, Input } from "reactstrap";
 
 export default function EditorComponent() {
-	const { text, setText, user, setUser, selectedNote, notes, setNotes, setSelectedNote } = useContext(AppContext)
+  const { text, setText, selectedNote, setNotes, setSelectedNote } = useContext(
+    AppContext
+  );
 
-	return (
-		<div className="container">
-			<form className="note-write-form">
-				<input className="user" on onInput={(e)=> {
-					setSelectedNote(prevState => ({
-						...prevState,
-						title: e.target.value
-					  }));
-					console.log(e.target.value)
-					console.log(selectedNote)
-				}}/>
-				<textarea
-					className="note-input"
-					value={text}
-					onChange={e => {
-						setText(e.target.value)
-						setNotes(e.target.value)
-					}}
-				/>
-			</form>
-			<SyntaxHighlighter language="javascript" style={atomDark}>
-				{text}
-			</SyntaxHighlighter>
-		</div>
-	)
+  const handleTitleChange = (e) => {
+    setSelectedNote((prevState) => ({
+      ...prevState,
+      title: e.target.value,
+    }));
+  };
+
+  const handleNoteChange = (e) => {
+    setText(e.target.value);
+    setNotes(e.target.value);
+  };
+
+  return (
+    <div className="container">
+      <Form className="note-write-form">
+        <FormGroup>
+          <Label for="noteTitle">Note Title</Label>
+          <Input
+            type="text"
+            id="noteTitle"
+            defaultValue={selectedNote.title}
+            onChange={handleTitleChange}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label for="noteInput">Note Content</Label>
+          <Input
+            type="textarea"
+            id="noteInput"
+            defaultValue={selectedNote.content}
+            onChange={handleNoteChange}
+          />
+        </FormGroup>
+      </Form>
+    </div>
+  );
 }

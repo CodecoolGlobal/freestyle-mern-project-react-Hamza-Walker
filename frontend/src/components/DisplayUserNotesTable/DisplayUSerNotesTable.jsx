@@ -12,7 +12,7 @@ import NavigationBar from '../NavigationBar/NavigationBar';
 //TODO: create a button to create a new note
 
 const DisplayUSerNotesTable = () => {
-  const { user, notes, setNotes, setCurrentUserNote,} = useContext(AppContext)
+  const { user, notes, setNotes, setSelectedNote, selectedNote} = useContext(AppContext)
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -33,19 +33,23 @@ const DisplayUSerNotesTable = () => {
 
   const handleEvent = (event,note) => {
     console.log(note)
-    setCurrentUserNote(note)
-    navigate("/notes/:id");
-  }
+    setSelectedNote({
+        ...selectedNote,
+        title: note.title,
+        content: note.content
+      })
+      navigate(`/notes/${note._id}`); 
+    }
   
 
   return (
     <>
-     <NavigationBar />
+     <NavigationBar user={user}/>
       {loading ? (
         <div>Loading...</div>
       ) : (
         <div className='notes-list-container'>
-          <h1>DisplayUSerNotesTable</h1>
+          {/* <h1>DisplayUSerNotesTable</h1> */}
           <Table hover className='notes-table'>
             <thead>
               <tr>

@@ -5,7 +5,6 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import LoginPage from "./components/LoginPage";
 import DisplayUSerNotesTable from "./components/DisplayUserNotesTable/DisplayUserNotesTable";
-import EditorPage from "./components/EditorPage";
 import MarkDownPage from "./components/MarkDownPage";
 export const AppContext = createContext({});
 const clientId = '161332176689-u4kmfe25ddfu9na2ick4f9b5d2990cir.apps.googleusercontent.com'
@@ -29,7 +28,7 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [notes, setNotes] = useState([]);
   const [currrnetUserNote, setCurrentUserNote] = useState(null);
-  const [selectedNote, setSelectedNote] = useState(null);
+  const [selectedNote, setSelectedNote] = useState({ title: "", content: "" });
   const [text, setText] = useState(
     		"# A demo of `react-markdown`\n\n`react-markdown` is a markdown component for React.\n\n👉 Changes are re-rendered as you type.\n\n👈 Try writing some markdown on the left.\n\n## Overview\n\nA component by [Espen Hovlandsdal](https://espen.codes/)"
     	)
