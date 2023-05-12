@@ -3,9 +3,9 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
-import LoginPage from "./components/LoginPage";
+import LoginPage from "./components/LoginPage/LoginPage";
 import DisplayUSerNotesTable from "./components/DisplayUserNotesTable/DisplayUserNotesTable";
-import MarkDownPage from "./components/MarkDownPage";
+import DisplayPlusEditorPage from "./components/Display&EditorPage/DisplayPlusEditorPage";
 export const AppContext = createContext({});
 const clientId = '161332176689-u4kmfe25ddfu9na2ick4f9b5d2990cir.apps.googleusercontent.com'
 
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/notes/:id",
-    element: <MarkDownPage />,
+    element: <DisplayPlusEditorPage />,
   },
 ]);
 

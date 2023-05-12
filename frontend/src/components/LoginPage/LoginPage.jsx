@@ -1,9 +1,9 @@
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { useContext } from "react";
-import { AppContext } from "../main";
+import { AppContext } from "../../main";
 import { useNavigate } from "react-router-dom";
-import "../assets/css/login-page.css";
+import "../../assets/css/LoginPage.css";
 
 export default function LoginPage() {
   const { user, setUser } = useContext(AppContext);

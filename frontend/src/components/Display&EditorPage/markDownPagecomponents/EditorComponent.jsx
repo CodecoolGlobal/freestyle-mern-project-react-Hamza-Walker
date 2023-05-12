@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "../../main";
+import { AppContext } from "../../../main";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 
 export default function EditorComponent() {

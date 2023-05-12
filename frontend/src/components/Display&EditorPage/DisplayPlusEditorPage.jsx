@@ -1,13 +1,13 @@
-import { AppContext } from '../main'
+import { AppContext } from '../../main'
 import { Button } from 'reactstrap';
 import { useContext, useState } from "react"
-import SaveDeleteNote from './SaveDeleteNote'
-import NavigationBar from "./NavigationBar/NavigationBar";
-import EditorComponent from "./markDownPagecomponents/EditorComponent"
-import NotesDisplayComponent from "./markDownPagecomponents/NotesDisplayComponent"
-import "../assets/css/MarkdownPage.css"
+import SaveDeleteNote from '../SaveDeleteNote'
+import NavigationBar from "../NavigationBar/NavigationBar";
+import EditorComponent from "../Display&EditorPage/markDownPagecomponents/EditorComponent"
+import NotesDisplayComponent from "../Display&EditorPage/markDownPagecomponents/NotesDisplayComponent"
+import "../../assets/css/DisplayPlusEditorPage.css"
 
-export default function MarkdownPage() {
+export default function DisplayPlusEditorPage() {
 
 	const { user} = useContext(AppContext)
 	const [showEditor, setShowEditor] = useState(false);

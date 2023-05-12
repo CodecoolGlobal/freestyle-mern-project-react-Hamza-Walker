@@ -56,7 +56,7 @@ export default function SaveDeleteNote() {
             {/* <p>{note.content}</p> */}
           </div>
           <div>
-            <Button color="primary" onClick={(e) => {
+            <Button color="dark" onClick={(e) => {
               e.stopPropagation();
               handleSaveNote(note._id);
             }}>
