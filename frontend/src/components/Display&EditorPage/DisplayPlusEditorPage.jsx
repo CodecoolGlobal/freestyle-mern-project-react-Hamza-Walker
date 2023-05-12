@@ -3,8 +3,8 @@ import { Button } from 'reactstrap';
 import { useContext, useState } from "react"
 import SaveDeleteNote from '../SaveDeleteNote'
 import NavigationBar from "../NavigationBar/NavigationBar";
-import EditorComponent from "../Display&EditorPage/markDownPagecomponents/EditorComponent"
-import NotesDisplayComponent from "../Display&EditorPage/markDownPagecomponents/NotesDisplayComponent"
+import EditorComponent from "./ChildComponents/EditorComponent"
+import NotesDisplayComponent from "./ChildComponents/NotesDisplayComponent"
 import "../../assets/css/DisplayPlusEditorPage.css"
 
 export default function DisplayPlusEditorPage() {
