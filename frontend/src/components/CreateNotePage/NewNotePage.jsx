@@ -1,8 +1,12 @@
 import React from 'react'
-
+import CreateNoteForm from './CreateNoteForm'
+import NavigationBar from '../NavigationBar/NavigationBar'
 const NewNotePage = () => {
   return (
-    <div>NewNotePage</div>
+   <>
+    <NavigationBar />
+   <CreateNoteForm />
+   </>
   )
 }
 

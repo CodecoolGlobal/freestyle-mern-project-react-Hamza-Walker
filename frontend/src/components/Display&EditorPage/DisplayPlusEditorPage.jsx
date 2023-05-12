@@ -1,7 +1,7 @@
 import { AppContext } from '../../main'
 import { Button } from 'reactstrap';
 import { useContext, useState } from "react"
-import SaveDeleteNote from '../SaveDeleteNote'
+import SaveDeleteNote from '../SaveDeleteNote/SaveDeleteNote'
 import NavigationBar from "../NavigationBar/NavigationBar";
 import EditorComponent from "./ChildComponents/EditorComponent"
 import NotesDisplayComponent from "./ChildComponents/NotesDisplayComponent"

@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
+import { AppContext } from "../../main";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
-const NewNoteForm = () => {
+const CreateNoteForm = () => {
+  const { user } = useContext(AppContext);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [owner, setOwner] = useState("");
+  const [owner, setOwner] = useState(user.email);
   const [permitted, setPermitted] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const newNote = { title, content, owner, permitted };
     try {
-      const response = await axios.post("http://localhost:3000/api/notes", newNote);
+      const response = await axios.post("http://localhost:3000/api/note", newNote);
       console.log(response.data);
-    
     } catch (error) {
       console.error(error);
     }
@@ -50,9 +51,8 @@ const NewNoteForm = () => {
           type="text"
           name="owner"
           id="owner"
-          placeholder="Note Owner"
           value={owner}
-          onChange={(event) => setOwner(event.target.value)}
+          disabled={true}
         />
       </FormGroup>
       <FormGroup>
@@ -73,4 +73,4 @@ const NewNoteForm = () => {
   );
 };
 
-export default NewNoteForm;
+export default CreateNoteForm;
