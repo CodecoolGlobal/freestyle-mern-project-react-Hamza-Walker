@@ -1,8 +1,8 @@
 import React, {useContext } from 'react';
 import axios from 'axios';
-import { AppContext } from '../main';
+import { AppContext } from '../../main';
 import { Button } from 'reactstrap';
-// import '../assets/css/fetch-user-notes.css';
+import '../../assets/css/save-delete-notes.css';
 
 export default function SaveDeleteNote() {
   const { setText, selectedNote, setSelectedNote, text, notes, setNotes } = useContext(AppContext);
@@ -52,7 +52,7 @@ export default function SaveDeleteNote() {
       {notes.map((note) => (
         <div key={note._id} className="fetch-user-note" onClick={() => handleNoteClick(note)}>
           <div>
-            <h2>{note.title}</h2>
+            <h2 className='raise-title'>{note.title}</h2>
             {/* <p>{note.content}</p> */}
           </div>
           <div>

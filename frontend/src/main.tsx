@@ -6,6 +6,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import LoginPage from "./components/LoginPage/LoginPage";
 import DisplayUSerNotesTable from "./components/DisplayUserNotesTable/DisplayUserNotesTable";
 import DisplayPlusEditorPage from "./components/Display&EditorPage/DisplayPlusEditorPage";
+import CreateNoteForm from "./components/CreateNotePage/CreateNoteForm";
 export const AppContext = createContext({});
 const clientId = '161332176689-u4kmfe25ddfu9na2ick4f9b5d2990cir.apps.googleusercontent.com'
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/notes",
     element: <DisplayUSerNotesTable />,
+  },
+  {
+    path: "/notes/newnote",
+    element: <CreateNoteForm />,
   },
   {
     path: "/notes/:id",

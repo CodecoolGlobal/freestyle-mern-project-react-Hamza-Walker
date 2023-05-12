@@ -12,6 +12,11 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "default-src 'self';");
+    next();
+  });
+  
 app.use("/api/note", notesRouter)
 app.use("/api/group", groupRouter)
 app.use("/api/user", userRouter)

@@ -6,13 +6,10 @@ import { useNavigate } from "react-router-dom";
 import "../../assets/css/LoginPage.css";
 
 export default function LoginPage() {
-  const { user, setUser } = useContext(AppContext);
+  const { setUser } = useContext(AppContext);
   const navigate = useNavigate();
 
-  if (user) {
-    navigate("/notes");
-    return null;
-  }
+
 
   return (
     <div className="login-page flex-column justify-center align-center height-100 gap-3">

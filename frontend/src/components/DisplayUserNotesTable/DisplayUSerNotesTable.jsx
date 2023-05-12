@@ -6,8 +6,6 @@ import './DisplayUSerNotesTable.css';
 import { useNavigate } from 'react-router-dom';
 import NavigationBar from '../NavigationBar/NavigationBar';
 
-//TODO: create a table with user notes, id, title, content, date created, date updated, owner email
-//TODO: create a button to create a new note
 
 const DisplayUSerNotesTable = () => {
   const { user, notes, setNotes, setSelectedNote, selectedNote } = useContext(AppContext);
@@ -29,7 +27,7 @@ const DisplayUSerNotesTable = () => {
     fetchUserObject();
   }, [user.email]);
 
-  const handleEvent = (event, note) => {
+  const handleEvent = (note) => {
     console.log(note);
     setSelectedNote({
       ...selectedNote,
@@ -44,11 +42,10 @@ const DisplayUSerNotesTable = () => {
       <NavigationBar user={user} />
       {loading ? (
         <div className="d-flex justify-content-center align-items-center">
-          <Spinner color="gray" />
+          <Spinner color="dark" />
         </div>
       ) : (
         <div className="notes-list-container">
-          {/* <h1>DisplayUSerNotesTable</h1> */}
           <Table hover className="notes-table">
             <thead>
               <tr>
@@ -60,9 +57,9 @@ const DisplayUSerNotesTable = () => {
                 <th>Owner Email</th>
               </tr>
             </thead>
-            <tbody onClick={handleEvent}>
+            <tbody>
               {notes.map((note) => (
-                <tr key={note._id} onClick={(event) => handleEvent(event, note)}>
+                <tr key={note._id} onClick={() => handleEvent(note)}>
                   <td>{note._id}</td>
                   <td>{note.title}</td>
                   <td>{note.content}</td>

@@ -3,7 +3,7 @@ import { AppContext } from "../../../main";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 
 export default function EditorComponent() {
-  const { text, setText, selectedNote, setNotes, setSelectedNote } = useContext(
+  const { setText, selectedNote, setNotes, setSelectedNote } = useContext(
     AppContext
   );
 
