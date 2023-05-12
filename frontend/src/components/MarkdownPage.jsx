@@ -1,14 +1,14 @@
 import { AppContext } from '../main'
 import { Button } from 'reactstrap';
 import { useContext, useState } from "react"
-import FetchUserNotes from './FetchUserNotes'
+import SaveDeleteNote from './SaveDeleteNote'
 import NavigationBar from "./NavigationBar/NavigationBar";
 import EditorComponent from "./markDownPagecomponents/EditorComponent"
 import NotesDisplayComponent from "./markDownPagecomponents/NotesDisplayComponent"
 import "../assets/css/MarkdownPage.css"
 
 export default function MarkdownPage() {
-	
+
 	const { user} = useContext(AppContext)
 	const [showEditor, setShowEditor] = useState(false);
 
@@ -20,7 +20,7 @@ export default function MarkdownPage() {
 			<div className="flex-row">
 				<NotesDisplayComponent />
 				{showEditor && <EditorComponent />}
-				<FetchUserNotes/>
+				<SaveDeleteNote/>
 			</div>
 		</>
 	)
