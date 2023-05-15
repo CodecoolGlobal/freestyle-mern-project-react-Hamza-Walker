@@ -1,9 +1,10 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { AppContext } from "../../main";
-import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { Button, Form, FormGroup, Input, Label, Alert } from "reactstrap";
 
 const CreateNoteForm = () => {
+  const [popup, setPopup] = useState(false)
   const { user } = useContext(AppContext);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -16,12 +17,14 @@ const CreateNoteForm = () => {
     try {
       const response = await axios.post("http://localhost:3000/api/note", newNote);
       console.log(response.data);
+      setPopup(true)
     } catch (error) {
       console.error(error);
     }
   };
 
   return (
+    <div>
     <Form onSubmit={handleSubmit}>
       <FormGroup>
         <Label for="title">Title</Label>
@@ -70,6 +73,13 @@ const CreateNoteForm = () => {
         Submit
       </Button>
     </Form>
+    {popup && (
+      <Alert color="success" isOpen={popup} toggle={() => setPopup(false)}>
+        The Note has been saved!
+      </Alert>
+    )}
+    </div>
+    
   );
 };
 
