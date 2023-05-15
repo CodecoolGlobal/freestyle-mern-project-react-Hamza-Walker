@@ -49,7 +49,7 @@ export default function SaveDeleteNote() {
 
   return (
     <div className="notes-title">
-      {notes.map((note) => (
+      { notes && notes.map((note) => (
         <div key={note._id} className="fetch-user-note" onClick={() => handleNoteClick(note)}>
           <div>
             <h2 className='raise-title'>{note.title}</h2>

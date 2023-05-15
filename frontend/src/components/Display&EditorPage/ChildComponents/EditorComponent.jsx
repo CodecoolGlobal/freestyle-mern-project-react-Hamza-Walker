@@ -3,7 +3,8 @@ import { AppContext } from "../../../main";
 import { Form, FormGroup, Label, Input } from "reactstrap";
 
 export default function EditorComponent() {
-  const { setText, selectedNote, setNotes, setSelectedNote } = useContext(
+
+  const { setText, selectedNote, setNotes, setSelectedNote, inputNote } = useContext(
     AppContext
   );
 
@@ -16,7 +17,7 @@ export default function EditorComponent() {
 
   const handleNoteChange = (e) => {
     setText(e.target.value);
-    setNotes(e.target.value);
+    setSelectedNote(e.target.value);
   };
 
   return (
