@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 import LoginPage from "./components/LoginPage/LoginPage";
-import DisplayUSerNotesTable from "./components/DisplayUserNotesTable/DisplayUserNotesTable";
+import DisplayUSerNotesTable from "./components/DisplayUserNotesTable/DisplayUSerNotesTable";
 import DisplayPlusEditorPage from "./components/Display&EditorPage/DisplayPlusEditorPage";
 import NewNotePage from "./components/CreateNotePage/NewNotePage";
 export const AppContext = createContext({});
