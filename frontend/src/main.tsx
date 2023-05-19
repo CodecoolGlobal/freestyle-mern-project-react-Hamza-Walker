@@ -7,6 +7,7 @@ import LoginPage from "./components/LoginPage/LoginPage";
 import DisplayUSerNotesTable from "./components/DisplayUserNotesTable/DisplayUSerNotesTable";
 import DisplayPlusEditorPage from "./components/Display&EditorPage/DisplayPlusEditorPage";
 import NewNotePage from "./components/CreateNotePage/NewNotePage";
+import RegistrationPage from "./components/RegistrationPage/RegistrationPage"
 export const AppContext = createContext({});
 const clientId = '161332176689-u4kmfe25ddfu9na2ick4f9b5d2990cir.apps.googleusercontent.com'
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/notes/:id",
     element: <DisplayPlusEditorPage />,
+  },
+  {
+    path: "/register",
+    element: <RegistrationPage />,
   },
 ]);
 

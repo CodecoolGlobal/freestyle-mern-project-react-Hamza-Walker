@@ -1,19 +1,40 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../model/User');
+const bcrypt = require("bcrypt");
 
 router.use(express.json());
 
-router.get('/', (req, res) => {
-    User.find({})
-    .then(user => {
-        res.json(user)
-    })
-    .catch((err) => {
-        console.log(err);
-        res.status(400);
-    });
+// Assuming you have the necessary dependencies and server setup in your backend
+
+router.post("/login", async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+        // Find the user with the given username in the MongoDB collection
+        const user = await User.findOne({ username });
+    
+        if (!user) {
+          // User not found
+          return res.status(401).json({ error: "Invalid username or password" });
+        }
+    
+        // Compare the provided password with the hashed password stored in the database
+        const passwordMatch = await bcrypt.compare(password, user.password);
+    
+        if (!passwordMatch) {
+          // Passwords do not match
+          return res.status(401).json({ error: "Invalid username or password" });
+        }
+    
+        // Passwords match, user authenticated successfully
+        res.json({ user });
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Server error" });
+      }
 });
+  
 
 router.get('/:id', (req, res) => {
     const id = req.params.id;
@@ -33,16 +54,16 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
 
 
-    const name = req.body.name;
+    const username = req.body.username;
     const password = req.body.password;
-    const iconURL = req.body.iconURL;
+    const email = req.body.email;
     const createdAt = Date.now();
     const updatedAt = Date.now();
 
     const user = new User({
-        name,
+        username,
         password,
-        iconURL,
+        email,
         createdAt,
         updatedAt
     });
