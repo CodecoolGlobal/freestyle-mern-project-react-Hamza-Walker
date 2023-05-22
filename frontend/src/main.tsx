@@ -9,7 +9,8 @@ import DisplayPlusEditorPage from "./components/Display&EditorPage/DisplayPlusEd
 import NewNotePage from "./components/CreateNotePage/NewNotePage";
 import RegistrationPage from "./components/RegistrationPage/RegistrationPage"
 export const AppContext = createContext({});
-const clientId = '161332176689-u4kmfe25ddfu9na2ick4f9b5d2990cir.apps.googleusercontent.com'
+
+const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
 const router = createBrowserRouter([
   {

@@ -52,17 +52,16 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    const { username, password, email } = req.body;
 
-
-    const username = req.body.username;
-    const password = req.body.password;
-    const email = req.body.email;
     const createdAt = Date.now();
     const updatedAt = Date.now();
 
+    const hashedPassword = bcrypt.hashSync(password, 1);
+
     const user = new User({
         username,
-        password,
+        password: hashedPassword,
         email,
         createdAt,
         updatedAt

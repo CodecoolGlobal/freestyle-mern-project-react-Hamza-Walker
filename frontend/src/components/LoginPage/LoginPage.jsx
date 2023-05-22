@@ -17,7 +17,7 @@ export default function LoginPage() {
     const password = event.target.password.value;
 
     try {
-      const response = await fetch("http://localhost:3000/api/user/login", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -26,8 +26,8 @@ export default function LoginPage() {
       });
 
       if (response.ok) {
-        const user = await response.json();
-        setUser({user});
+        const { user } = await response.json();
+        setUser(user);
         navigate("/notes");
       } else {
         console.error("Login failed");
